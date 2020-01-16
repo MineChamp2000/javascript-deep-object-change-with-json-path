@@ -1,14 +1,17 @@
 # javascript deep object change with json-path
 Change deep JavaScript Objects using json path
 
+## PURPOSE
+Let's say your code generates text fields and you want to update an objects value when the text field value changes. For doing so, you need to pass the json path to the onChange listener or the text field as an attribute. By doing so, the listener knows where to store the new value.
+
 ## USAGE
 ----
 deepChange(object, jsonpath, valueObject);
 ----
 
-object: The object you want to change
-jsonpath: path to the field you want to change e.g "root.parent.child.0.name" will change root.parent.child[0].name
-valueObject: Can be a string or any other object.
+- object: The object you want to change
+- jsonpath: path to the field you want to change, e.g "root.parent.child.0.name" will change root.parent.child[0].name
+- valueObject: Can be a string or any other object.
 
 example:
 
@@ -18,7 +21,7 @@ var obj = {
         parents: {
             mom: {
                 name: "Lisa"
-            }
+            },
             dad: {
                 name: "Peter"
             }
@@ -47,7 +50,7 @@ var obj = {
         parents: {
             mom: {
                 name: "Lisa"
-            }
+            },
             dad: {
                 name: "Peter"
             }
