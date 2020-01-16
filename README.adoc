@@ -1,0 +1,13 @@
+# javascript-deep-object-change-with-json-path
+Change deep JavaScript Objects using json path
+
+## USAGE
+deepChange(object, jsonpath, valueObject);
+
+object: The object you want to change
+jsonpath: path to the field you want to change e.g "root.parent.child.0.name" will change root.parent.child[0].name
+valueObject: Can be a string or any other object.
+
+example usage:
+
+
