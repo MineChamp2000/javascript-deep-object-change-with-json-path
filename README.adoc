@@ -1,13 +1,70 @@
-# javascript-deep-object-change-with-json-path
+# javascript deep object change with json-path
 Change deep JavaScript Objects using json path
 
 ## USAGE
+----
 deepChange(object, jsonpath, valueObject);
+----
 
 object: The object you want to change
 jsonpath: path to the field you want to change e.g "root.parent.child.0.name" will change root.parent.child[0].name
 valueObject: Can be a string or any other object.
 
-example usage:
+example:
 
+----
+var obj = {
+    family: {
+        parents: {
+            mom: {
+                name: "Lisa"
+            }
+            dad: {
+                name: "Peter"
+            }
+        },
+        children: [
+            {
+                name: "John"
+            },
+            {
+                name: "Marlene"
+            }
+        ]
+    }
+}
 
+//We want to change Marlene's name to 'Vivienne'
+obj = deepChange(obj, "family.children.1.name", "Vivienne");
+
+//Now the children are called John and Vivienne.
+----
+
+Another example:
+----
+var obj = {
+    family: {
+        parents: {
+            mom: {
+                name: "Lisa"
+            }
+            dad: {
+                name: "Peter"
+            }
+        },
+        children: []
+    }
+}
+
+var children = [
+            {
+                name: "John"
+            },
+            {
+                name: "Marlene"
+            }
+        ];
+
+obj = deepChange(obj, "family.children", children);
+//The whole object 'children' is copied to the initial object.
+----
